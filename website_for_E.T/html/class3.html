@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 기본 설정 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mission</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    
+    <!-- Inline CSS -->
+    <style>
+        /* 공지사항 스타일 */
+        .notice_section {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .notice_box {
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .notice_title {
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .notice_text {
+            color: #333;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .delete_button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- header section start -->
+    <div class="header_section"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="log_in.html">log in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class1.html">team A</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class2.html">team B</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class3.html">team C</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class4.html">team D</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- header section end -->
+    
+    <!-- Notice Section -->
+    <div class="notice_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="notice_box" id="noticeList">
+                        <h2 class="notice_title">공지사항</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Notice Section -->
+
+    <!-- 공지사항 입력 폼 -->
+   <div class="container">
+      <div class="row">
+          <div class="col-sm-12">
+              <h3>새로운 공지사항 추가</h3>
+              <form id="noticeForm">
+                  <input type="text" id="noticeInput" placeholder="공지사항 내용을 입력하세요">
+                  <button type="submit">추가</button>
+              </form>
+          </div>
+    </div>
+   </div>
+   <!-- End Notice Section -->
+
+   <script>
+      // 공지사항 입력 폼 제출 시
+      $('#noticeForm').submit(function(event) {
+         event.preventDefault(); // 기본 동작 방지
+
+          var noticeText = $('#noticeInput').val(); // 입력된 공지사항 텍스트 가져오기
+
+          // 로컬 저장소에 공지사항 저장
+          localStorage.setItem('notice', noticeText);
+
+          // 다른 페이지로 이동
+          window.location.href = "class1.html";
+          window.location.href = "class2.html";
+          window.location.href = "class4.html";
+      });
+   </script>
+
+    <!-- mission section start -->
+    <div class="mission_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="mission_taital">A조 일정</h1>
+                    <p class="mission_text">going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mission_section_2">
+            <div class="row">
+                <div class="offset-md-2"></div>
+                <div class="col-md-5">
+                    <div class="container_main">
+                        <img src="images/img-1.png" alt="Avatar" class="image">
+                        <div class="overlay">
+                            <div class="text">
+                                <h4 class="some_text">whichalteration in some </h4>
+                                <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
+                                <div class="btn_main">
+                                    <div class="donate_bt"><a href="#">Read More</a></div>
+                                    <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="container_main">
+                        <img src="images/img-2.png" alt="Avatar" class="image">
+                        <div class="overlay">
+                            <div class="text">
+                                <h4 class="some_text">whichalteration in some </h4>
+                                <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
+                                <div class="btn_main">
+                                    <div class="donate_bt"><a href="#">Read More</a></div>
+                                    <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mission_section_2">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="container_main">
+                        <img src="images/img-3.png" alt="Avatar" class="image">
+                        <div class="overlay">
+                            <div class="text">
+                                <h4 class="some_text">whichalteration in some </h4>
+                                <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
+                                <div class="btn_main">
+                                    <div class="donate_bt"><a href="#">Read More</a></div>
+                                    <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="container_main">
+                        <img src="images/img-4.png" alt="Avatar" class="image">
+                        <div class="overlay">
+                            <div class="text">
+                                <h4 class="some_text">whichalteration in some </h4>
+                                <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
+                                <div class="btn_main">
+                                    <div class="donate_bt"><a href="#">Read More</a></div>
+                                    <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-md-2"></div>
+            </div>
+        </div>
+        <div class="mission_section_2">
+            <div class="row">
+                <div class="offset-md-2"></div>
+                <div class="col-md-5">
+                    <div class="container_main">
+                        <img src="images/img-5.png" alt="Avatar" class="image">
+                        <div class="overlay">
+                            <div class="text">
+                                <h4 class="some_text">whichalteration in some </h4>
+                                <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
+                                <div class="btn_main">
+                                    <div class="donate_bt"><a href="#">Read More</a></div>
+                                    <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="container_main">
+                        <img src="images/img-6.png" alt="Avatar" class="image">
+                        <div class="overlay">
+                            <div class="text">
+                                <h4 class="some_text">whichalteration in some </h4>
+                                <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
+                                <div class="btn_main">
+                                    <div class="donate_bt"><a href="#">Read More</a></div>
+                                    <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // 공지사항 입력 폼 제출 시
+        $('#noticeForm').submit(function(event) {
+            event.preventDefault(); // 기본 동작 방지
+
+            var noticeText = $('#noticeInput').val(); // 입력된 공지사항 텍스트 가져오기
+
+            // 새로운 공지사항을 리스트에 추가
+            $('#noticeList').append(`
+                <div class="notice_text">${noticeText}</div>
+                <button class="delete_button" onclick="deleteNotice(this)">삭제</button>
+            `);
+
+            // 입력 폼 초기화
+            $('#noticeInput').val('');
+        });
+
+        // 공지사항 삭제 함수
+        function deleteNotice(button) {
+            $(button).prev('.notice_text').remove(); // 공지사항 텍스트 제거
+            $(button).remove(); // 삭제 버튼 제거
+        }
+    </script>
+</body>
+</html>
